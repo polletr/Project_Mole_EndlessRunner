@@ -721,8 +721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  emergeSpeed: 0.4
-  digSpeed: 1
+  emergeSpeed: 0.35
+  flapSpeed: 1.2
   minY: -6
   maxY: 6
   OnDigging:

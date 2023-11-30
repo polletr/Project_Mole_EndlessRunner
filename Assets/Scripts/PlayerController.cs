@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float emergeSpeed;
 
+    [SerializeField]
+    private float flapSpeed;
+
     private bool isDigging;
 
     [SerializeField]
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private UnityEvent OnAboveground;
 
+    private bool onTheDirt;
+
 
     private Rigidbody2D rb;
 
@@ -37,18 +42,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && (onTheDirt || isDigging))
         {
             OnDigging.Invoke();
-            rb.gravityScale = 0f;
             rb.velocity = new Vector2(0f, -speed);
+
         }
 
         DigMovement();
-
+        AirMovement();
     }
 
-
+    private void AirMovement()
+    {
+        if (!onTheDirt && !isDigging)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up * flapSpeed, ForceMode2D.Force);
+            }
+        }
+    }
 
     private void DigMovement()
     {
@@ -58,6 +72,7 @@ public class PlayerController : MonoBehaviour
             {
                 //rb.velocity = new Vector2(0f, digSpeed);
                 rb.AddForce(Vector2.up * emergeSpeed, ForceMode2D.Impulse);
+
             }
         }
 
@@ -71,8 +86,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dirt"))
         {
-            Debug.Log("Enter");
-            
+            rb.gravityScale = 0f;
+
             isDigging = true;
         }
     }
@@ -88,7 +103,17 @@ public class PlayerController : MonoBehaviour
 
             OnAboveground.Invoke();
             isDigging = false;
+            onTheDirt = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Dirt"))
+        {
+            onTheDirt = true;
+        }
+
     }
 
 }
