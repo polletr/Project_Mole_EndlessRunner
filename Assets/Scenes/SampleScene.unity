@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 909185438}
   m_Layer: 0
   m_Name: Dirt
-  m_TagString: Untagged
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -639,7 +639,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1441239833
 SpriteRenderer:
@@ -721,8 +721,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lowBoundary: -6
-  highBoundary: 6
+  emergeSpeed: 0.4
+  digSpeed: 1
+  minY: -6
+  maxY: 6
   OnDigging:
     m_PersistentCalls:
       m_Calls:
@@ -737,6 +739,21 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+  OnAboveground:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 909185438}
+        m_TargetAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+        m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2115250090
 GameObject:
