@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dirt : MonoBehaviour
+public class SpawnerManager : MonoBehaviour
 {
-    public bool digging;
     // Start is called before the first frame update
     void Start()
     {

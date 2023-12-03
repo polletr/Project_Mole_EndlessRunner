@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private GameObject dirt;
 
     // Start is called before the first frame update
     void Start()
