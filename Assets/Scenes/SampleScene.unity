@@ -1994,11 +1994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29d2caed799f3b428e0762bae83eaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   emergeSpeed: 0.3
   flapSpeed: 60
-  minY: -7
-  maxY: 7
   OnDigging:
     m_PersistentCalls:
       m_Calls:
@@ -2351,6 +2349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be179d099ce10d9408f2d2957fdcbc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleSpeed: 2
+  smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
+  smallRockInterval: 2
+  largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
+  largeRockInterval: 5
 --- !u!4 &1850210864
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,7 +2362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850210862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.0185604, y: 1.8906546, z: -0.0132751465}
+  m_LocalPosition: {x: 10, y: 0, z: -0.0132751465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2696,3 +2699,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2139dd5bb6cb5144d96e445fc73a3249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minY: -7
+  maxY: 7

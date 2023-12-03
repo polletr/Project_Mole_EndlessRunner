@@ -18,11 +18,6 @@ public class PlayerController : MonoBehaviour
     private bool isDigging;
 
     [SerializeField]
-    private float minY;
-    [SerializeField]
-    private float maxY;
-
-    [SerializeField]
     private UnityEvent OnDigging;
 
     [SerializeField]
@@ -30,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private bool onTheDirt;
 
+    private bool invincible;
+    private float invincibilityTimer;
 
     private Rigidbody2D rb;
 
@@ -51,6 +48,16 @@ public class PlayerController : MonoBehaviour
 
         DigMovement();
         AirMovement();
+
+        if (invincible)
+        {
+            float timer = 0f;
+            timer += Time.deltaTime;
+            if (timer >= invincibilityTimer)
+            {
+                invincible = false;
+            }
+        }
     }
 
     private void AirMovement()
@@ -77,7 +84,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Clamp the position within boundaries
-        float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
+        float clampedY = Mathf.Clamp(transform.position.y, GameManager.Instance._minY, GameManager.Instance._maxY);
         transform.position = new Vector2(transform.position.x, clampedY);
 
     }
@@ -89,6 +96,15 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 0f;
 
             isDigging = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") && !invincible)
+        {
+            //Get hit
+            invincible = true;
         }
     }
 

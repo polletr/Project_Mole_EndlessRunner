@@ -26,6 +26,7 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (this.transform.position.x <= -12f)
+            Destroy(this.gameObject);
     }
 }

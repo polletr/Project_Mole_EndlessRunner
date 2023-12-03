@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6620179358638592838}
   m_Layer: 0
   m_Name: Obstacle_Prefab
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 423454689
-  m_SortingLayer: 2
+  m_SortingLayerID: -849935315
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fcd6d16a56ed74a4ea0b50ff110e4b8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,13 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b36907b8aa29ab419a670f734029e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite:
-  - {fileID: 21300000, guid: fcd6d16a56ed74a4ea0b50ff110e4b8a, type: 3}
-  - {fileID: 21300000, guid: 7926b537bc0770141b2e99868cd1214a, type: 3}
-  - {fileID: 21300000, guid: 8ba46f342ff97ee41aa0027922df7a03, type: 3}
-  - {fileID: 21300000, guid: e580a929c0f165846a9e26950a1ab744, type: 3}
-  - {fileID: 21300000, guid: 57f7b0f1986175540a79d7deadb386f2, type: 3}
-  - {fileID: 21300000, guid: f5352e2b0afc52c4ca8f4714efa67530, type: 3}
+  sprite: []
 --- !u!50 &517555896742889011
 Rigidbody2D:
   serializedVersion: 4
@@ -137,7 +131,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
