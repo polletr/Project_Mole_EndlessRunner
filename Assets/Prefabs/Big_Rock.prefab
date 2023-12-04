@@ -8,6 +8,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: sprite.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 92d201d40d0031b4c8b19061b6273fc2, type: 3}

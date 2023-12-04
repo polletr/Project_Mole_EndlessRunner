@@ -8,6 +8,18 @@ public class SpawnerManager : Singleton<SpawnerManager>
     [SerializeField]
     private float obstacleSpeed;
 
+    [Header("Collectible")]
+    [SerializeField]
+    private GameObject goldenWorm;
+    [SerializeField]
+    private float goldenWormInterval;
+
+    [Header("Tree")]
+    [SerializeField]
+    private GameObject tree;
+    [SerializeField]
+    private float treeInterval;
+
     [Header("Small Rock")]
     [SerializeField]
     private GameObject smallRock;
@@ -21,6 +33,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
     private float largeRockInterval;
 
     private float timer;
+
+    private float minBound;
+    private float maxBound;
 
     private GameObject obstacleObj;
 
@@ -41,28 +56,60 @@ public class SpawnerManager : Singleton<SpawnerManager>
         timer += Time.fixedDeltaTime;
         Debug.Log("timer");
 
+
+
         if (Mathf.Abs(timer % smallRockInterval) <= 0.02f)
         {
             obstacleObj = smallRock;
-            SpawnGroundObstacle();
+            SpawnObstacle();
         }
         
         if (Mathf.Abs(timer % largeRockInterval) <= 0.02f)
         {
             obstacleObj = largeRock;
-            SpawnGroundObstacle();
+            SpawnObstacle();
         }
 
+        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
+        {
+            obstacleObj = tree;
+            SpawnObstacle();
+        }
+
+        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
+        {
+            obstacleObj = goldenWorm;
+            SpawnObstacle();
+        }
 
     }
 
-    private void SpawnGroundObstacle()
+    private void SpawnObstacle()
     {
-        GameObject spawnedObstacle = Instantiate(obstacleObj, new Vector2(transform.position.x, Random.Range(-0.5f, GameManager.Instance._minY)), Quaternion.identity);
+        if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Under")
+        {
+            minBound = GameManager.Instance._minY;
+            maxBound = -0.5f;
+
+        }
+        else if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Above")
+        {
+            minBound = 0.5f;
+            maxBound = GameManager.Instance._maxY;
+        }
+        else
+        {
+            minBound = GameManager.Instance._minY;
+            maxBound = GameManager.Instance._maxY;
+        }
+
+
+        GameObject spawnedObstacle = Instantiate(obstacleObj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
 
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
 
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
     }
+
 
 }

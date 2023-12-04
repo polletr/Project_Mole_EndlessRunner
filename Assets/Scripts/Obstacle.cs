@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public enum spawnCondition // your custom enumeration
+    {
+        Above,
+        Under,
+        All
+    };
+
     [SerializeField]
     private Sprite[] sprite;
 
     private SpriteRenderer spriteRenderer;
 
+    public spawnCondition spawnType;
+
     private BoxCollider2D collider;
+
+
     // Start is called before the first frame update
     void Start()
     {

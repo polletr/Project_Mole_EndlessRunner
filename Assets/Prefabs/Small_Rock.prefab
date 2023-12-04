@@ -7,6 +7,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: fcd6d16a56ed74a4ea0b50ff110e4b8a, type: 3}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7926b537bc0770141b2e99868cd1214a, type: 3}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ba46f342ff97ee41aa0027922df7a03, type: 3}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e580a929c0f165846a9e26950a1ab744, type: 3}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 57f7b0f1986175540a79d7deadb386f2, type: 3}
+    - target: {fileID: 2870573722998855449, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: sprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: f5352e2b0afc52c4ca8f4714efa67530, type: 3}
     - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3311808595007906103, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_Name
-      value: Obstacle_Prefab
+      value: Small_Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
