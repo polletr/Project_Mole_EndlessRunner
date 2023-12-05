@@ -8,6 +8,16 @@ public class GameManager : Singleton<GameManager>
     private float minY;
     [SerializeField]
     private float maxY;
+    [SerializeField]
+    private float gameSpeed;
+
+    private float timer;
+
+    [SerializeField]
+    private float increaseSpeedTimer;
+
+    [SerializeField]
+    private float increaSpeedMultiplier;
 
     public float _minY
     {
@@ -17,6 +27,11 @@ public class GameManager : Singleton<GameManager>
     {
         get { return maxY; }
     }
+    public float _gameSpeed
+    {
+        get { return gameSpeed; }
+    }
+
 
 
     // Start is called before the first frame update
@@ -28,6 +43,15 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        IncreaseSpeedOverTime();
+    }
+
+    private void IncreaseSpeedOverTime()
+    {
+        if (Mathf.Abs(timer % increaseSpeedTimer) <= 0.02f)
+        {
+            gameSpeed *= increaSpeedMultiplier;
+        }
     }
 }

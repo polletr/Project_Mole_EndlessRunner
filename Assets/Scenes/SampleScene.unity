@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: -2
+  speedDifference: 0
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: -1
+  speedDifference: 1
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: -0.5
+  speedDifference: 1.5
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: -1.5
+  speedDifference: 0.5
   boundary: -2
   respawnPos: {x: 0, y: 0}
   startpos: {x: -15, y: 0}
@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 0
+  speedDifference: 2
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -2349,7 +2349,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be179d099ce10d9408f2d2957fdcbc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpeed: 2
+  goldenWorm: {fileID: 0}
+  goldenWormInterval: 0
+  tree: {fileID: 5387435726386495068, guid: 9f80a73a1d1d5954ab8b6666f9d5ce53, type: 3}
+  treeInterval: 10
   smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
   smallRockInterval: 2
   largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
@@ -2701,3 +2704,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -7
   maxY: 7
+  gameSpeed: 2
+  increaseSpeedTimer: 10
+  increaSpeedMultiplier: 1.05

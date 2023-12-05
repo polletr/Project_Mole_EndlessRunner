@@ -5,10 +5,12 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     [SerializeField] private GameObject cam;
-    [SerializeField] private float parallaxEffect;
+    [SerializeField] private float speedDifference;
     [SerializeField] private float boundary;
     [SerializeField] private Vector2 respawnPos;
     [SerializeField] private Vector2 startpos;
+
+    private float speed;
     private float length;
 
 
@@ -21,7 +23,9 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       float dist = Mathf.Repeat(Time.time * parallaxEffect, length);
+        speed = GameManager.Instance._gameSpeed - speedDifference;
+
+        float dist = Mathf.Repeat(Time.time * -speed, length);
         transform.position = new Vector3(startpos.x + dist, transform.position.y, transform.position.z);
 
         // Check if the background has reached the left boundary

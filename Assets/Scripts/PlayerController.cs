@@ -112,7 +112,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dirt"))
         {
-            Debug.Log("Exit");
             rb.gravityScale = 1f;
             //rb.velocity = new Vector2(0f, emergeSpeed);
             //rb.AddForce(Vector2.up * emergeSpeed, ForceMode2D.Impulse);

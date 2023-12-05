@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SpawnerManager : Singleton<SpawnerManager>
 {
-    [SerializeField]
     private float obstacleSpeed;
 
     [Header("Collectible")]
@@ -54,9 +53,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
     private void SpawnLoop()
     {
         timer += Time.fixedDeltaTime;
-        Debug.Log("timer");
-
-
 
         if (Mathf.Abs(timer % smallRockInterval) <= 0.02f)
         {
@@ -70,7 +66,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
             SpawnObstacle();
         }
 
-        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
+/*        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
         {
             obstacleObj = tree;
             SpawnObstacle();
@@ -81,7 +77,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
             obstacleObj = goldenWorm;
             SpawnObstacle();
         }
-
+*/
     }
 
     private void SpawnObstacle()
@@ -107,6 +103,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
         GameObject spawnedObstacle = Instantiate(obstacleObj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
 
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
+        obstacleSpeed = GameManager.Instance._gameSpeed;
 
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
     }
