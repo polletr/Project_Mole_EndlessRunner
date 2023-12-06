@@ -45,7 +45,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         SpawnLoop();
     }
@@ -110,7 +110,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
         obstacleSpeed = GameManager.Instance._gameSpeed;
 
-        obstacleRB.velocity = Vector2.left * obstacleSpeed;
+        obstacleRB.velocity = Vector2.left * obstacleSpeed * Time.fixedDeltaTime;
     }
 
 

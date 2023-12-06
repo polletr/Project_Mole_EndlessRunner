@@ -25,7 +25,7 @@ public class Parallax : MonoBehaviour
     {
         speed = GameManager.Instance._gameSpeed - speedDifference;
 
-        float dist = Mathf.Repeat(Time.time * -speed, length);
+        float dist = Mathf.Repeat(Time.fixedDeltaTime * -speed, length);
         transform.position = new Vector3(startpos.x + dist, transform.position.y, transform.position.z);
 
         // Check if the background has reached the left boundary

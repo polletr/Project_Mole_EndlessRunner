@@ -47,13 +47,17 @@ public class PlayerController : MonoBehaviour
 
         }
 
+    }
+
+    private void FixedUpdate()
+    {
         DigMovement();
         AirMovement();
 
         if (invincible)
         {
             float timer = 0f;
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             if (timer >= invincibilityTimer)
             {
                 invincible = false;
@@ -67,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.AddForce(Vector2.up * flapSpeed, ForceMode2D.Force);
+                rb.AddForce(Vector2.up * flapSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
             }
         }
     }
@@ -79,7 +83,7 @@ public class PlayerController : MonoBehaviour
             if (!Input.GetKey(KeyCode.Space))
             {
                 //rb.velocity = new Vector2(0f, digSpeed);
-                rb.AddForce(Vector2.up * emergeSpeed, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * emergeSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
 
             }
         }
