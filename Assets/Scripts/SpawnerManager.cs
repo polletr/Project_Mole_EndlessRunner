@@ -93,6 +93,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
             minBound = 0.5f;
             maxBound = GameManager.Instance._maxY;
         }
+        else if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Tree")
+        {
+/*            minBound = 0.5f;
+            maxBound = GameManager.Instance._maxY;
+*/        }
         else
         {
             minBound = GameManager.Instance._minY;
