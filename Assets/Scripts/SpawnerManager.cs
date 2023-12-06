@@ -38,6 +38,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
     private GameObject obstacleObj;
 
+    Queue<GameObject> myQueue = new Queue<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,66 +54,74 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
     private void SpawnLoop()
     {
-        timer += Time.fixedDeltaTime;
+        timer += Time.deltaTime;
 
-        if (Mathf.Abs(timer % smallRockInterval) <= 0.02f)
+        if (Mathf.Abs(timer % Random.Range(smallRockInterval, smallRockInterval + 2.0f)) <= 0.02f)
         {
-            obstacleObj = smallRock;
-            SpawnObstacle();
-        }
-        
-        if (Mathf.Abs(timer % largeRockInterval) <= 0.02f)
-        {
-            obstacleObj = largeRock;
-            SpawnObstacle();
+            myQueue.Enqueue(smallRock);
         }
 
-        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
+        if (Mathf.Abs(timer % Random.Range(largeRockInterval, largeRockInterval + 4.0f)) <= 0.02f)
         {
-            obstacleObj = tree;
-            SpawnObstacle();
+            myQueue.Enqueue(largeRock);
         }
 
-/*        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
+        if (Mathf.Abs(timer % Random.Range(treeInterval, treeInterval + 7.0f)) <= 0.02f)
         {
-            obstacleObj = goldenWorm;
-            SpawnObstacle();
+            myQueue.Enqueue(tree);
         }
-*/
+
+        /*        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
+                {
+                    obstacleObj = goldenWorm;
+                    SpawnObstacle();
+                }
+        */
+        StartCoroutine(SpawnObstacle());
     }
 
-    private void SpawnObstacle()
+    IEnumerator SpawnObstacle()
     {
-        if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Under")
+        yield return new WaitForSeconds(2f);
+
+        if (myQueue.Count > 0)
         {
-            minBound = GameManager.Instance._minY;
-            maxBound = -0.5f;
+
+            Debug.Log(myQueue.Count);
+
+            GameObject obj = myQueue.Dequeue();
+
+            if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Under")
+            {
+                minBound = GameManager.Instance._minY;
+                maxBound = -0.5f;
+            }
+            else if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Above")
+            {
+                minBound = 0.5f;
+                maxBound = GameManager.Instance._maxY;
+            }
+            else if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Tree")
+            {
+                minBound = 3.05f;
+                maxBound = 3.05f;
+            }
+            else
+            {
+                minBound = GameManager.Instance._minY;
+                maxBound = GameManager.Instance._maxY;
+            }
+
+
+            GameObject spawnedObstacle = Instantiate(obj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
 
         }
-        else if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Above")
-        {
-            minBound = 0.5f;
-            maxBound = GameManager.Instance._maxY;
-        }
-        else if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Tree")
-        {
-            minBound = 3.05f;
-            maxBound = 3.05f;
-        }
-        else
-        {
-            minBound = GameManager.Instance._minY;
-            maxBound = GameManager.Instance._maxY;
-        }
-
-
-        GameObject spawnedObstacle = Instantiate(obstacleObj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
-
-        Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
-        obstacleSpeed = GameManager.Instance._gameSpeed;
-
-        obstacleRB.velocity = Vector2.left * obstacleSpeed * Time.fixedDeltaTime;
     }
 
+    IEnumerator WaitForFunction()
+    {
+        yield return new WaitForSeconds(3);
+    }
 
 }
+

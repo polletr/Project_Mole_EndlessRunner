@@ -21,10 +21,13 @@ public class Obstacle : MonoBehaviour
 
     private BoxCollider2D collider;
 
+    private Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
 
@@ -36,9 +39,11 @@ public class Obstacle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (this.transform.position.x <= -12f)
+        rb.velocity = Vector2.left * GameManager.Instance._gameSpeed * Time.fixedDeltaTime;
+
+        if (this.transform.position.x <= -15f)
             Destroy(this.gameObject);
     }
 }

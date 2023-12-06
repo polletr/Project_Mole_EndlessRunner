@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 0
+  speedDifference: 52
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 1
+  speedDifference: 54
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 1.5
+  speedDifference: 56
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -4131,8 +4131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29d2caed799f3b428e0762bae83eaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  emergeSpeed: 0.3
+  speed: 2
+  emergeSpeed: 4
   flapSpeed: 60
   OnDigging:
     m_PersistentCalls:
@@ -4289,7 +4289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 0.5
+  speedDifference: 52
   boundary: -2
   respawnPos: {x: 0, y: 0}
   startpos: {x: -15, y: 0}
@@ -4510,7 +4510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 2
+  speedDifference: 58
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -4785,11 +4785,11 @@ MonoBehaviour:
   goldenWorm: {fileID: 0}
   goldenWormInterval: 0
   tree: {fileID: 5387435726386495068, guid: 9f80a73a1d1d5954ab8b6666f9d5ce53, type: 3}
-  treeInterval: 10
+  treeInterval: 13
   smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
-  smallRockInterval: 2
+  smallRockInterval: 5
   largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
-  largeRockInterval: 5
+  largeRockInterval: 11
 --- !u!4 &1850210864
 Transform:
   m_ObjectHideFlags: 0
@@ -4798,7 +4798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850210862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -0.0132751465}
+  m_LocalPosition: {x: 12.72, y: 0, z: -0.0132751465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5372,6 +5372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -7
   maxY: 7
-  gameSpeed: 2
+  gameSpeed: 50
   increaseSpeedTimer: 10
   increaSpeedMultiplier: 1.05
