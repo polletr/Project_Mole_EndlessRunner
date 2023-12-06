@@ -66,13 +66,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
             SpawnObstacle();
         }
 
-/*        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
+        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
         {
             obstacleObj = tree;
             SpawnObstacle();
         }
 
-        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
+/*        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
         {
             obstacleObj = goldenWorm;
             SpawnObstacle();
@@ -95,9 +95,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
         }
         else if (obstacleObj.GetComponent<Obstacle>().spawnType.ToString() == "Tree")
         {
-/*            minBound = 0.5f;
-            maxBound = GameManager.Instance._maxY;
-*/        }
+            minBound = 3.05f;
+            maxBound = 3.05f;
+        }
         else
         {
             minBound = GameManager.Instance._minY;
