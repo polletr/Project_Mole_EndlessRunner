@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && (onTheDirt || isDigging))
         {
             OnDigging.Invoke();
+            AudioManager.Instance.PlaySFX("Digging");
             rb.velocity = new Vector2(0f, -speed);
 
         }
