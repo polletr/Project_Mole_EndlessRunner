@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private float invincibilityTimer;
 
     private Rigidbody2D rb;
+    public HealthManager healthManager;
 
     // Start is called before the first frame update
     void Start()
@@ -108,7 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle") && !invincible)
         {
-            //Get hit
+            healthManager.DepleteLife();
             invincible = true;
         }
     }
