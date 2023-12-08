@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Dirt
   - Obstacle
+  - Collectible
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collectible
   - Water
   - UI
   - 
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 423454689
+    locked: 0
+  - name: Collectible
+    uniqueID: 4247455213
     locked: 0
   - name: Player
     uniqueID: 3445031981
