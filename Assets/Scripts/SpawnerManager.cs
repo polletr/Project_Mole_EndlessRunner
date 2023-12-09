@@ -92,9 +92,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
         {
             GameObject obj = myQueue.Dequeue();
 
-            float spawnInterval = 0;
+            float spawnInterval = Random.Range(0.5f, 2f);
 
-            if (obj == smallRock)
+
+/*            if (obj == smallRock)
             {
                 spawnInterval = Random.Range(smallRockInterval - 2.0f, smallRockInterval + 2.0f);
             }
@@ -110,7 +111,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
             {
                 spawnInterval = goldenWormInterval;
             }
-
+*/
             float elapsedTime = 0;
 
             while (elapsedTime < spawnInterval)
@@ -125,7 +126,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
             Instantiate(obj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
         }
 
-        yield return new WaitForSeconds(1.0f); // Introduce a delay after spawning all objects
+        yield return null; // Introduce a delay after spawning all objects
         isSpawning = false;
     }
 

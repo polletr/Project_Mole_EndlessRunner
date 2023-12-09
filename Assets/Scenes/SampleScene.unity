@@ -6779,7 +6779,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.094
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9142,7 +9142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   emergeSpeed: 5
-  flapSpeed: 20
+  flapSpeed: 30
   OnDigging:
     m_PersistentCalls:
       m_Calls:
@@ -10073,11 +10073,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldenWorm: {fileID: 8949217374755894642, guid: 95983483ec614384e8fcf77a725acd87, type: 3}
-  goldenWormInterval: 10
+  goldenWormInterval: 5
   tree: {fileID: 5387435726386495068, guid: 9f80a73a1d1d5954ab8b6666f9d5ce53, type: 3}
   treeInterval: 4
   smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
-  smallRockInterval: 3
+  smallRockInterval: 1
   largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
   largeRockInterval: 3
 --- !u!4 &1850210864
@@ -10088,7 +10088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850210862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.72, y: 0, z: -0.0132751465}
+  m_LocalPosition: {x: 19.83, y: 0, z: -0.0132751465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10797,8 +10797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -7
   maxY: 7
-  gameSpeed: 2
-  increaseSpeedTimer: 15
+  gameSpeed: 3
+  increaseSpeedTimer: 10
   increaSpeedMultiplier: 1.1
 --- !u!1001 &9150684461147047453
 PrefabInstance:
