@@ -40,6 +40,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
     Queue<GameObject> myQueue = new Queue<GameObject>();
 
+    private bool isSpawning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,78 +51,109 @@ public class SpawnerManager : Singleton<SpawnerManager>
     // Update is called once per frame
     void FixedUpdate()
     {
-        SpawnLoop();
+        AddToQueue();
     }
 
-    private void SpawnLoop()
+    private void AddToQueue()
     {
         timer += Time.deltaTime;
 
-        if (Mathf.Abs(timer % Random.Range(smallRockInterval, smallRockInterval + 2.0f)) <= 0.02f)
+        if (Mathf.Abs(timer % smallRockInterval) <= 0.02f)
         {
             myQueue.Enqueue(smallRock);
         }
 
-        if (Mathf.Abs(timer % Random.Range(largeRockInterval, largeRockInterval + 4.0f)) <= 0.02f)
+        if (Mathf.Abs(timer % largeRockInterval) <= 0.02f)
         {
             myQueue.Enqueue(largeRock);
         }
 
-        if (Mathf.Abs(timer % Random.Range(treeInterval, treeInterval + 7.0f)) <= 0.02f)
+        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
         {
             myQueue.Enqueue(tree);
         }
 
-        /*        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
-                {
-                    obstacleObj = goldenWorm;
-                    SpawnObstacle();
-                }
-        */
-        StartCoroutine(SpawnObstacle());
+        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
+        {
+            myQueue.Enqueue(goldenWorm);
+        }
+
+        Debug.Log(myQueue.Count);
+
+        if (!isSpawning)
+        {
+            StartCoroutine(SpawnObstacle());
+        }
     }
 
     IEnumerator SpawnObstacle()
     {
-        yield return new WaitForSeconds(2f);
+        isSpawning = true;
 
-        if (myQueue.Count > 0)
+        while (myQueue.Count > 0)
         {
-
-            Debug.Log(myQueue.Count);
-
             GameObject obj = myQueue.Dequeue();
 
-            if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Under")
+            float spawnInterval = 0;
+
+            if (obj == smallRock)
             {
-                minBound = GameManager.Instance._minY;
-                maxBound = -0.5f;
+                spawnInterval = Random.Range(smallRockInterval - 2.0f, smallRockInterval);
             }
-            else if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Above")
+            else if (obj == largeRock)
             {
-                minBound = 0.5f;
-                maxBound = GameManager.Instance._maxY;
+                spawnInterval = Random.Range(largeRockInterval - 2.0f, largeRockInterval);
             }
-            else if (obj.GetComponent<Obstacle>().spawnType.ToString() == "Tree")
+            else if (obj == tree)
             {
-                minBound = 3.05f;
-                maxBound = 3.05f;
+                spawnInterval = Random.Range(treeInterval - 3.0f, treeInterval);
             }
-            else
+            else if (obj == goldenWorm)
             {
-                minBound = GameManager.Instance._minY;
-                maxBound = GameManager.Instance._maxY;
+                spawnInterval = goldenWormInterval;
             }
 
+            float elapsedTime = 0;
 
-            GameObject spawnedObstacle = Instantiate(obj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
+            while (elapsedTime < spawnInterval)
+            {
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
 
+            // Set spawn bounds based on the object type
+            SetSpawnBounds(obj.GetComponent<Obstacle>());
+
+            Instantiate(obj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
         }
+
+        yield return new WaitForSeconds(1.0f); // Introduce a delay after spawning all objects
+        isSpawning = false;
     }
 
-    IEnumerator WaitForFunction()
+    void SetSpawnBounds(Obstacle obstacle)
     {
-        yield return new WaitForSeconds(3);
+        switch (obstacle.spawnType)
+        {
+            case Obstacle.spawnCondition.Under:
+                minBound = GameManager.Instance._minY;
+                maxBound = -0.5f;
+                break;
+            case Obstacle.spawnCondition.Above:
+                minBound = 0.5f;
+                maxBound = GameManager.Instance._maxY;
+                break;
+            case Obstacle.spawnCondition.Tree:
+                minBound = 3.05f;
+                maxBound = 3.05f;
+                break;
+            case Obstacle.spawnCondition.All:
+                minBound = GameManager.Instance._minY;
+                maxBound = GameManager.Instance._maxY;
+                break;
+            default:
+                break;
+        }
     }
 
 }

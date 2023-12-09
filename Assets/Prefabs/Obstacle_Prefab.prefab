@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3139928347383864257}
   - component: {fileID: 3197448538106239841}
   - component: {fileID: 2870573722998855449}
-  - component: {fileID: 517555896742889011}
   - component: {fileID: 6620179358638592838}
   m_Layer: 0
   m_Name: Obstacle_Prefab
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -849935315
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fcd6d16a56ed74a4ea0b50ff110e4b8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,27 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: []
   spawnType: 2
---- !u!50 &517555896742889011
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311808595007906103}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &6620179358638592838
 BoxCollider2D:
   m_ObjectHideFlags: 0

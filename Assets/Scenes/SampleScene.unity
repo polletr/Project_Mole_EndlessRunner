@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 52
+  speedDifference: 0
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -1966,7 +1966,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.094
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 54
+  speedDifference: 0.4
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -3317,7 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 56
+  speedDifference: 0.5
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -4209,7 +4209,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40293598, y: 0.80585814}
+  m_Offset: {x: -1.0168257, y: -0.09136343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4220,7 +4220,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.732557, y: 7.446862}
+  m_Size: {x: 11.938105, y: 4.7079744}
   m_EdgeRadius: 0
 --- !u!50 &1441239832
 Rigidbody2D:
@@ -4495,7 +4495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 52
+  speedDifference: 0.2
   boundary: -2
   respawnPos: {x: 0, y: 0}
   startpos: {x: -15, y: 0}
@@ -4804,7 +4804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  speedDifference: 58
+  speedDifference: 0.8
   boundary: -8
   respawnPos: {x: 0, y: 0}
   startpos: {x: -10, y: 0}
@@ -5228,14 +5228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be179d099ce10d9408f2d2957fdcbc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldenWorm: {fileID: 0}
-  goldenWormInterval: 0
+  goldenWorm: {fileID: 8949217374755894642, guid: 95983483ec614384e8fcf77a725acd87, type: 3}
+  goldenWormInterval: 10
   tree: {fileID: 5387435726386495068, guid: 9f80a73a1d1d5954ab8b6666f9d5ce53, type: 3}
-  treeInterval: 13
+  treeInterval: 7
   smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
-  smallRockInterval: 5
+  smallRockInterval: 3
   largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
-  largeRockInterval: 11
+  largeRockInterval: 8
 --- !u!4 &1850210864
 Transform:
   m_ObjectHideFlags: 0
@@ -5953,63 +5953,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -7
   maxY: 7
-  gameSpeed: 50
-  increaseSpeedTimer: 10
-  increaSpeedMultiplier: 1.05
---- !u!1001 &6443361862670443453
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3949038506470262732, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_Name
-      value: Carrot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.729
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.517
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360552749311875127, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 270
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 48711c2292d74f448bf581bcc8633a34, type: 3}
+  gameSpeed: 1
+  increaseSpeedTimer: 15
+  increaSpeedMultiplier: 1.1

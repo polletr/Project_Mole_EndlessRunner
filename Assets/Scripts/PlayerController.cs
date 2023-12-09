@@ -85,7 +85,6 @@ public class PlayerController : MonoBehaviour
             {
                 //rb.velocity = new Vector2(0f, digSpeed);
                 rb.AddForce(Vector2.up * emergeSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-
             }
         }
 
