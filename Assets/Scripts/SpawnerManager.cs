@@ -78,8 +78,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
             myQueue.Enqueue(goldenWorm);
         }
 
-        Debug.Log(myQueue.Count);
-
         if (!isSpawning)
         {
             StartCoroutine(SpawnObstacle());
@@ -98,15 +96,15 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
             if (obj == smallRock)
             {
-                spawnInterval = Random.Range(smallRockInterval - 2.0f, smallRockInterval);
+                spawnInterval = Random.Range(smallRockInterval - 2.0f, smallRockInterval + 2.0f);
             }
             else if (obj == largeRock)
             {
-                spawnInterval = Random.Range(largeRockInterval - 2.0f, largeRockInterval);
+                spawnInterval = Random.Range(largeRockInterval - 2.0f, largeRockInterval + 2.0f);
             }
             else if (obj == tree)
             {
-                spawnInterval = Random.Range(treeInterval - 3.0f, treeInterval);
+                spawnInterval = Random.Range(treeInterval - 3.0f, treeInterval + 2.0f);
             }
             else if (obj == goldenWorm)
             {
