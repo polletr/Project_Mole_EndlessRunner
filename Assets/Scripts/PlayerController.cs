@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public HealthManager healthManager;
 
+    [SerializeField]
+    private float rotationSpeed = 5f;
+
+    [SerializeField]
+    private float maxAngleRotation = 45f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +51,25 @@ public class PlayerController : MonoBehaviour
             OnDigging.Invoke();
             AudioManager.Instance.PlaySFX("Digging");
             rb.velocity = new Vector2(0f, -speed);
+        }
 
+        transform.position = new Vector2(-15f, transform.position.y);
+
+        if (rb.velocity.y < 0f)
+        {            
+            //Rotate player down in the z axis
+
+            float targetRotation = Mathf.Lerp(0f, -maxAngleRotation, Mathf.Abs(rb.velocity.y) / rotationSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, targetRotation), Time.deltaTime * rotationSpeed);
+        }
+        else if(rb.velocity.y > 0f)
+        {
+            float targetRotation = Mathf.Lerp(0f, maxAngleRotation, Mathf.Abs(rb.velocity.y) / rotationSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, targetRotation), Time.deltaTime * rotationSpeed);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * rotationSpeed);
         }
 
     }
@@ -72,7 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.AddForce(Vector2.up * flapSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+                rb.AddForce(Vector2.up * flapSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }
         }
     }
@@ -85,6 +109,7 @@ public class PlayerController : MonoBehaviour
             {
                 //rb.velocity = new Vector2(0f, digSpeed);
                 rb.AddForce(Vector2.up * emergeSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+
             }
         }
 
