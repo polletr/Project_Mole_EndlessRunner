@@ -22,12 +22,16 @@ public class Obstacle : MonoBehaviour
 
     private BoxCollider2D collider;
 
+    private SpriteMask mask;
+
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
+
+        mask = GetComponentInChildren<SpriteMask>();
 
         int i = Random.Range(0, sprite.Length);
         spriteRenderer.sprite = sprite[i];
@@ -37,6 +41,8 @@ public class Obstacle : MonoBehaviour
             collider.size = new Vector2(S.x / 2f, S.y);
         else
             collider.size = S / 2f;
+
+        mask.transform.localScale = S * 7f;
     }
 
     // Update is called once per frame

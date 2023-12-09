@@ -136,6 +136,12 @@ public class PlayerController : MonoBehaviour
             healthManager.DepleteLife();
             invincible = true;
         }
+
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            Destroy(collision.gameObject);
+            CollectibleManager.Instance.collectibleCount++;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

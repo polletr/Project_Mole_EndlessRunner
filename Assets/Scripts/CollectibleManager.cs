@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CollectibleManager : MonoBehaviour
+public class CollectibleManager : Singleton<CollectibleManager>
 {
     public int collectibleCount;
     public TextMeshProUGUI collectibleText;
@@ -20,12 +20,4 @@ public class CollectibleManager : MonoBehaviour
         collectibleText.text = ":   " + collectibleCount.ToString();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Collectible"))
-        {
-            Destroy(other.gameObject);
-            collectibleCount++;
-        }
-    }
 }
