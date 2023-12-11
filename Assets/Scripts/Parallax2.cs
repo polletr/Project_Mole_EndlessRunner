@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Parallax2 : MonoBehaviour
 {
     Material mat;
     float distance;
 
-    [Range(0f,0.5f)]
-    public float speed;
+    [Range(0f, 1f)]
+    public float speedMultiplier = 1f;
+
+    private float gameSpeed;
+
+    private float length;
 
     // Start is called before the first frame update
     void Start()
     {
-        mat = GetComponent<Renderer>().material;
+        mat = GetComponent<SpriteRenderer>().material;
+
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        distance += Time.deltaTime * speed;
+        gameSpeed = GameManager.Instance._gameSpeed;
+
+        distance += (Time.fixedDeltaTime * gameSpeed * speedMultiplier) / length;
+
         mat.SetTextureOffset("_MainTex", Vector2.right * distance);
+        //transform.position = new Vector3(transform.position.x + Time.fixedDeltaTime * -GameManager.Instance._gameSpeed, transform.position.y, transform.position.z);
     }
 }

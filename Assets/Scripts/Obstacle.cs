@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -50,7 +51,6 @@ public class Obstacle : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x + Time.fixedDeltaTime * -GameManager.Instance._gameSpeed, transform.position.y, transform.position.z);
         //rb.velocity = Vector2.left * GameManager.Instance._gameSpeed * Time.fixedDeltaTime;
-
         if (this.transform.position.x <= -20f)
             Destroy(this.gameObject);
     }
