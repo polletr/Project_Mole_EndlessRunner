@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,9 +113,735 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1218
+        width: 267
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e4798cbbd4adb4cb83faa6ff49b908
+      internalID: -1165060266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_1
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1219
+        width: 278
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5b1d2801db36f4788044d7d6398f00
+      internalID: -493321856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_2
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1209
+        width: 276
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e19a79e82137343816015a23793639
+      internalID: 824087712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_3
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1214
+        width: 280
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783c9107aa77f1949ab918cfb8b6627c
+      internalID: 464440719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_4
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1270
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc1593cfd9ea974abf54d4272750a80
+      internalID: 1109711697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_5
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1261
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90ef979336a41b4bab267a1db64d52f
+      internalID: -143819867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_6
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1213
+        width: 293
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7618c7518d9bb0a4a8c5b5300ae3371b
+      internalID: 715730057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_7
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 1262
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48eada36cd39b5e4e8ec38e8bc552158
+      internalID: -847374651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_8
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 1217
+        width: 286
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8711f5fbf155a44bb38eb163e1cc113
+      internalID: 947431856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_9
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 1201
+        width: 294
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc54096e6c095349ba852079d08219f
+      internalID: -782654707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_10
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1260
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7255e3db1d12e1418b3dc47aa238a25
+      internalID: -1197181752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 933
+        width: 254
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5da0166241fc7244804eac7b576f147
+      internalID: -1998896801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_12
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 934
+        width: 272
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6d27a2c59e8f245a54df5fa63e3020
+      internalID: -290544086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_13
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 930
+        width: 213
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3acf9a68ca2c1b42badb2bddef6d1b5
+      internalID: 485044579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_14
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 933
+        width: 185
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00de2c0538d90d4da08d2e77c9a9bf5
+      internalID: -1543830587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_15
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 923
+        width: 220
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d01835d61477d345b1660c593dd3989
+      internalID: -254818212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_16
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 928
+        width: 256
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e164ada7180df0468396fccf646c197
+      internalID: -707305300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_17
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 934
+        width: 273
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aca30cc07c8647458ca3631d68d652b
+      internalID: -1252096054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_18
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 926
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df6cd24998b8c44f9e4da918efbf581
+      internalID: -408522973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_19
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 922
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e07411c9f3992a4397a736546eb713b
+      internalID: 646552818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 608
+        width: 264
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d67723da27c043499864bf6ba6da070
+      internalID: -1201472255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_21
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 599
+        width: 258
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad99a9598b7cb64a8067991f23cf74a
+      internalID: 16887529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_22
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 616
+        width: 250
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cff995e1687d04aa4f81f5a962d1fa
+      internalID: 847572618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_23
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 623
+        width: 252
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcce649a37c8b3543b9f752c2c595d2b
+      internalID: 1401990757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_24
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 629
+        width: 278
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ed05167bdc5794cb05a935f3cc367d
+      internalID: 1250563009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_25
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 633
+        width: 287
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44aa433a8bf1f44e92ec59d3aa71225
+      internalID: 1446692963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_26
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 634
+        width: 269
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ff02b6a99b28d45bc46c029a222d01
+      internalID: 1591836537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_27
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 680
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb943e69276901469461a0f63296ff2
+      internalID: 1197902196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_28
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 371
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf480c221d5f14c96810267dea9c89
+      internalID: -1458987509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_29
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 310
+        width: 542
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5aaa9419d75e24b8299465ee3b84b1
+      internalID: 1487497632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_30
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 307
+        width: 280
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f7bb0b67373c84db8df8a660a226bf
+      internalID: 105907548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_31
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 337
+        width: 282
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce632f3ae588ab498195baeeae3c736
+      internalID: 616019181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_32
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 314
+        width: 268
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f117a8a2e4f354cbb61a74044cdfcf
+      internalID: -2130209210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkingMole_Anamation_Spirts_2_33
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 356
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50d5034b26729b4faa40f60a9aceb44
+      internalID: 409510481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +852,41 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WalkingMole_Anamation_Spirts_2_0: -1165060266
+      WalkingMole_Anamation_Spirts_2_1: -493321856
+      WalkingMole_Anamation_Spirts_2_10: -1197181752
+      WalkingMole_Anamation_Spirts_2_11: -1998896801
+      WalkingMole_Anamation_Spirts_2_12: -290544086
+      WalkingMole_Anamation_Spirts_2_13: 485044579
+      WalkingMole_Anamation_Spirts_2_14: -1543830587
+      WalkingMole_Anamation_Spirts_2_15: -254818212
+      WalkingMole_Anamation_Spirts_2_16: -707305300
+      WalkingMole_Anamation_Spirts_2_17: -1252096054
+      WalkingMole_Anamation_Spirts_2_18: -408522973
+      WalkingMole_Anamation_Spirts_2_19: 646552818
+      WalkingMole_Anamation_Spirts_2_2: 824087712
+      WalkingMole_Anamation_Spirts_2_20: -1201472255
+      WalkingMole_Anamation_Spirts_2_21: 16887529
+      WalkingMole_Anamation_Spirts_2_22: 847572618
+      WalkingMole_Anamation_Spirts_2_23: 1401990757
+      WalkingMole_Anamation_Spirts_2_24: 1250563009
+      WalkingMole_Anamation_Spirts_2_25: 1446692963
+      WalkingMole_Anamation_Spirts_2_26: 1591836537
+      WalkingMole_Anamation_Spirts_2_27: 1197902196
+      WalkingMole_Anamation_Spirts_2_28: -1458987509
+      WalkingMole_Anamation_Spirts_2_29: 1487497632
+      WalkingMole_Anamation_Spirts_2_3: 464440719
+      WalkingMole_Anamation_Spirts_2_30: 105907548
+      WalkingMole_Anamation_Spirts_2_31: 616019181
+      WalkingMole_Anamation_Spirts_2_32: -2130209210
+      WalkingMole_Anamation_Spirts_2_33: 409510481
+      WalkingMole_Anamation_Spirts_2_4: 1109711697
+      WalkingMole_Anamation_Spirts_2_5: -143819867
+      WalkingMole_Anamation_Spirts_2_6: 715730057
+      WalkingMole_Anamation_Spirts_2_7: -847374651
+      WalkingMole_Anamation_Spirts_2_8: 947431856
+      WalkingMole_Anamation_Spirts_2_9: -782654707
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

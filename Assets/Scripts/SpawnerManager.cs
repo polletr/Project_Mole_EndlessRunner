@@ -136,15 +136,15 @@ public class SpawnerManager : Singleton<SpawnerManager>
         {
             case Obstacle.spawnCondition.Under:
                 minBound = GameManager.Instance._minY;
-                maxBound = -0.5f;
+                maxBound = -1f;
                 break;
             case Obstacle.spawnCondition.Above:
-                minBound = 0.5f;
+                minBound = 1f;
                 maxBound = GameManager.Instance._maxY;
                 break;
             case Obstacle.spawnCondition.Tree:
-                minBound = 3.05f;
-                maxBound = 3.05f;
+                minBound = 1f;
+                maxBound = 1f;
                 break;
             case Obstacle.spawnCondition.All:
                 minBound = GameManager.Instance._minY;
