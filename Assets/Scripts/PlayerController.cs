@@ -49,8 +49,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && (onTheDirt || isDigging))
         {
             OnDigging.Invoke();
-            AudioManager.Instance.PlaySFX("Digging");
             rb.velocity = new Vector2(0f, -speed);
+            //AudioManager.Instance.PlaySFX("Digging");
+
         }
 
         transform.position = new Vector2(-15f, transform.position.y);
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(Vector2.up * flapSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+                AudioManager.Instance.PlaySFX("Flap");
             }
         }
     }
@@ -135,12 +137,16 @@ public class PlayerController : MonoBehaviour
         {
             healthManager.DepleteLife();
             invincible = true;
+            AudioManager.Instance.PlaySFX("Damage", 0.5f);
+
         }
 
         if (collision.gameObject.CompareTag("Collectible"))
         {
             Destroy(collision.gameObject);
             CollectibleManager.Instance.collectibleCount++;
+            AudioManager.Instance.PlaySFX("Collectible");
+
         }
     }
 

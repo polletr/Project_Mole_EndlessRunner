@@ -13,7 +13,6 @@ public class Parallax : MonoBehaviour
     private float speed;
     private float length;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +37,15 @@ public class Parallax : MonoBehaviour
         {
             startpos.x -= respawnPos.x;
         }
+    }
+
+    // Draw gizmos in the scene view
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(startpos, 0.5f); // Adjust the sphere size as needed
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(respawnPos + startpos, 0.5f); // Adjust the sphere size as needed
     }
 }

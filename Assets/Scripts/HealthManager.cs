@@ -34,6 +34,8 @@ public class HealthManager : MonoBehaviour
         if (currentLives <= 0)
         {
             SceneManager.LoadSceneAsync("GameOver");
+            AudioManager.Instance.PlaySFX("GameOver", 0.1f);
+
         }
     }
 
