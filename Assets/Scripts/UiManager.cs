@@ -23,6 +23,12 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Button howToPlayButton;
     [SerializeField]
+    private Button howToPlay2Button;
+    [SerializeField]
+    private Button howToPlay3Button;
+    [SerializeField]
+    private Button howToPlay4Button;
+    [SerializeField]
     private Button quitButton;
     [SerializeField]
     private Button creditsButton;
@@ -108,12 +114,27 @@ public class UiManager : MonoBehaviour
         SceneManager.LoadScene(1);
         Debug.Log("clicou em play");
     }
-    void OnHowToPlayButtonClicked()
+    public void OnHowToPlayButtonClicked()
     {
-        SceneManager.LoadScene("How To Play");
+        SceneManager.LoadScene("HowToPlay1");
         Debug.Log("clicou em how to play");
     }
-    void OnQuitButtonClicked()
+    public void OnHowToPlay2ButtonClicked()
+    {
+        SceneManager.LoadScene("HowToPlay2");
+        Debug.Log("clicou em how to play");
+    }
+    public void OnHowToPlay3ButtonClicked()
+    {
+        SceneManager.LoadScene("HowToPlay3");
+        Debug.Log("clicou em how to play");
+    }
+    public void OnHowToPlay4ButtonClicked()
+    {
+        SceneManager.LoadScene("HowToPlay4");
+        Debug.Log("clicou em how to play");
+    }
+    public void OnQuitButtonClicked()
     {
         Debug.Log("clicou em quit");
         Application.Quit();
