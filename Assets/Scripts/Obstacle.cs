@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
         Above,
         Under,
         Tree,
+        BigTree,
         All
     };
 

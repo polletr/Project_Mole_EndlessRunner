@@ -19,6 +19,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
     [SerializeField]
     private float treeInterval;
 
+    [Header("BigTree")]
+    [SerializeField]
+    private GameObject bigTree;
+    [SerializeField]
+    private float bigTreeInterval;
+
     [Header("Small Rock")]
     [SerializeField]
     private GameObject smallRock;
@@ -71,6 +77,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
         if (Mathf.Abs(timer % treeInterval) <= 0.02f)
         {
             myQueue.Enqueue(tree);
+        }
+
+        if (Mathf.Abs(timer % bigTreeInterval) <= 0.02f)
+        {
+            myQueue.Enqueue(bigTree);
         }
 
         if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
@@ -145,6 +156,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
             case Obstacle.spawnCondition.Tree:
                 minBound = 1f;
                 maxBound = 1f;
+                break;
+            case Obstacle.spawnCondition.BigTree:
+                minBound = 3f;
+                maxBound = 3f;
                 break;
             case Obstacle.spawnCondition.All:
                 minBound = GameManager.Instance._minY;

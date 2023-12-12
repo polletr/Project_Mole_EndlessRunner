@@ -9676,6 +9676,8 @@ MonoBehaviour:
   goldenWormInterval: 5
   tree: {fileID: 5387435726386495068, guid: 9f80a73a1d1d5954ab8b6666f9d5ce53, type: 3}
   treeInterval: 4
+  bigTree: {fileID: 1376107294583648187, guid: c5ac1fb04faaf3a42bfff5f0d8b419d5, type: 3}
+  bigTreeInterval: 10
   smallRock: {fileID: 5705584835876411786, guid: 7adc6c1e1130c63408e51328c61f3ad4, type: 3}
   smallRockInterval: 1
   largeRock: {fileID: 4770593201953815746, guid: 777ef0cf9cd65534e950ed9974eb423e, type: 3}
