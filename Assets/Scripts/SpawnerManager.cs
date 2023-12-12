@@ -13,6 +13,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
     [SerializeField]
     private float goldenWormInterval;
 
+    [Header("Coin")]
+    [SerializeField]
+    private GameObject coin;
+    [SerializeField]
+    private float coinInterval;
+
     [Header("Tree")]
     [SerializeField]
     private GameObject tree;
@@ -82,6 +88,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
         if (Mathf.Abs(timer % bigTreeInterval) <= 0.02f)
         {
             myQueue.Enqueue(bigTree);
+        }
+
+        if (Mathf.Abs(timer % coinInterval) <= 0.02f)
+        {
+            myQueue.Enqueue(coin);
         }
 
         if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
