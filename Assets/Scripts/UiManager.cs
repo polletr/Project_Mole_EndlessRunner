@@ -118,9 +118,9 @@ public class UiManager : MonoBehaviour
         Debug.Log("clicou em quit");
         Application.Quit();
     }
-    void OnCreditsButtonClicked()
+    public void OnCreditsButtonClicked()
     {
         Debug.Log("clicou em Credits");
-        SceneManager.LoadSceneAsync("Credit");
+        SceneManager.LoadSceneAsync("Credits");
     }
 }
