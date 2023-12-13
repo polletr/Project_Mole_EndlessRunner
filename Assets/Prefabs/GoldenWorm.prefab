@@ -25,11 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,6 +75,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3139928347383864257, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3197448538106239841, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -82,6 +90,22 @@ PrefabInstance:
     - target: {fileID: 3311808595007906103, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_TagString
       value: Collectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620179358638592838, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_Size.x
+      value: 26.978624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620179358638592838, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_Size.y
+      value: 25.10336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620179358638592838, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.20710659
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620179358638592838, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20430183
       objectReference: {fileID: 0}
     - target: {fileID: 6620179358638592838, guid: 32db74136cbcd8f4a85a6a936b1879d0, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -350,7 +374,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 1
       maxCurve:
         serializedVersion: 2

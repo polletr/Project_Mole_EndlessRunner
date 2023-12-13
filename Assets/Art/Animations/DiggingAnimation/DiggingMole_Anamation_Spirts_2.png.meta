@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,9 +113,231 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 787
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cd12132ca83b64393aed2701070a21
+      internalID: 1460612714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 787
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb95f34530bbdf429968ea06e15652b
+      internalID: 2110002918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 787
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d1898d0aaf65d46b1b0efda4c608b3
+      internalID: -95284935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 787
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5290f5511141b4690d4c2c1e02d604
+      internalID: -286334824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 787
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5873d527f22aff4dbbddda29e79a25f
+      internalID: 2135268134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 507
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c0ff37f0c46484ea9814481c84d7e0
+      internalID: 605782462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 507
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6729150029cb743a4bf69e7c5f466c
+      internalID: -1392590874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 507
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d7eadd2d7843144bee268eaa021163
+      internalID: -1692773644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_8
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 507
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd11a9275ab333945aa189115a138687
+      internalID: -613147376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiggingMole_Anamation_Spirts_2_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 507
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ede30eabc730345a8210917fa70104
+      internalID: -2100213241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +348,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DiggingMole_Anamation_Spirts_2_0: 1460612714
+      DiggingMole_Anamation_Spirts_2_1: 2110002918
+      DiggingMole_Anamation_Spirts_2_2: -95284935
+      DiggingMole_Anamation_Spirts_2_3: -286334824
+      DiggingMole_Anamation_Spirts_2_4: 2135268134
+      DiggingMole_Anamation_Spirts_2_5: 605782462
+      DiggingMole_Anamation_Spirts_2_6: -1392590874
+      DiggingMole_Anamation_Spirts_2_7: -1692773644
+      DiggingMole_Anamation_Spirts_2_8: -613147376
+      DiggingMole_Anamation_Spirts_2_9: -2100213241
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,66 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
+
+[System.Serializable]
+public class SpawnSettings
+{
+    public float initialSpawnInterval;
+    public float minSpawnInterval;
+    public float intervalReductionRate;
+}
 
 public class SpawnerManager : Singleton<SpawnerManager>
 {
-    private float obstacleSpeed;
-
     [Header("Collectible")]
-    [SerializeField]
-    private GameObject goldenWorm;
-    [SerializeField]
-    private float goldenWormInterval;
+    [SerializeField] private GameObject goldenWorm;
+    [SerializeField] private SpawnSettings goldenWormSpawnSettings;
+    [SerializeField] private float goldenWormStartDelay;
 
     [Header("Coin")]
-    [SerializeField]
-    private GameObject coin;
-    [SerializeField]
-    private float coinInterval;
+    [SerializeField] private GameObject coin;
+    [SerializeField] private SpawnSettings coinSpawnSettings;
+    [SerializeField] private float coinStartDelay;
 
     [Header("Tree")]
-    [SerializeField]
-    private GameObject tree;
-    [SerializeField]
-    private float treeInterval;
+    [SerializeField] private GameObject tree;
+    [SerializeField] private SpawnSettings treeSpawnSettings;
+    [SerializeField] private float treeStartDelay;
 
-    [Header("BigTree")]
-    [SerializeField]
-    private GameObject bigTree;
-    [SerializeField]
-    private float bigTreeInterval;
+    [Header("Log")]
+    [SerializeField] private GameObject log;
+    [SerializeField] private SpawnSettings logSpawnSettings;
+    [SerializeField] private float logStartDelay;
 
     [Header("Small Rock")]
-    [SerializeField]
-    private GameObject smallRock;
-    [SerializeField]
-    private float smallRockInterval;
+    [SerializeField] private GameObject smallRock;
+    [SerializeField] private SpawnSettings smallRockSpawnSettings;
+    [SerializeField] private float smallRockStartDelay;
 
     [Header("Large Rock")]
-    [SerializeField] 
-    private GameObject largeRock;
-    [SerializeField]
-    private float largeRockInterval;
+    [SerializeField] private GameObject largeRock;
+    [SerializeField] private SpawnSettings largeRockSpawnSettings;
+    [SerializeField] private float largeRockStartDelay;
 
     private float timer;
-
     private float minBound;
     private float maxBound;
-
     private GameObject obstacleObj;
-
-    Queue<GameObject> myQueue = new Queue<GameObject>();
-
+    private Queue<GameObject> myQueue = new Queue<GameObject>();
     private bool isSpawning = false;
 
-    // Start is called before the first frame update
+    // Other existing variables...
+
     void Start()
     {
         timer = 0;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         AddToQueue();
@@ -70,39 +65,27 @@ public class SpawnerManager : Singleton<SpawnerManager>
     {
         timer += Time.deltaTime;
 
-        if (Mathf.Abs(timer % smallRockInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(smallRock);
-        }
-
-        if (Mathf.Abs(timer % largeRockInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(largeRock);
-        }
-
-        if (Mathf.Abs(timer % treeInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(tree);
-        }
-
-        if (Mathf.Abs(timer % bigTreeInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(bigTree);
-        }
-
-        if (Mathf.Abs(timer % coinInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(coin);
-        }
-
-        if (Mathf.Abs(timer % goldenWormInterval) <= 0.02f)
-        {
-            myQueue.Enqueue(goldenWorm);
-        }
+        EnqueueObjectIfTimeElapsed(smallRock, smallRockSpawnSettings, smallRockStartDelay);
+        EnqueueObjectIfTimeElapsed(largeRock, largeRockSpawnSettings, largeRockStartDelay);
+        EnqueueObjectIfTimeElapsed(tree, treeSpawnSettings, treeStartDelay);
+        EnqueueObjectIfTimeElapsed(log, logSpawnSettings, logStartDelay);
+        EnqueueObjectIfTimeElapsed(coin, coinSpawnSettings, coinStartDelay);
+        EnqueueObjectIfTimeElapsed(goldenWorm, goldenWormSpawnSettings, goldenWormStartDelay);
 
         if (!isSpawning)
         {
             StartCoroutine(SpawnObstacle());
+        }
+    }
+
+    private void EnqueueObjectIfTimeElapsed(GameObject obj, SpawnSettings settings, float startDelay)
+    {
+        if (timer >= startDelay)
+        {
+            if (Mathf.Abs((timer - startDelay) % settings.initialSpawnInterval) <= 0.02f)
+            {
+                myQueue.Enqueue(obj);
+            }
         }
     }
 
@@ -116,24 +99,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
             float spawnInterval = Random.Range(0.5f, 2f);
 
-
-/*            if (obj == smallRock)
-            {
-                spawnInterval = Random.Range(smallRockInterval - 2.0f, smallRockInterval + 2.0f);
-            }
-            else if (obj == largeRock)
-            {
-                spawnInterval = Random.Range(largeRockInterval - 2.0f, largeRockInterval + 2.0f);
-            }
-            else if (obj == tree)
-            {
-                spawnInterval = Random.Range(treeInterval - 3.0f, treeInterval + 2.0f);
-            }
-            else if (obj == goldenWorm)
-            {
-                spawnInterval = goldenWormInterval;
-            }
-*/
             float elapsedTime = 0;
 
             while (elapsedTime < spawnInterval)
@@ -142,13 +107,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
                 yield return null;
             }
 
-            // Set spawn bounds based on the object type
             SetSpawnBounds(obj.GetComponent<Obstacle>());
 
             Instantiate(obj, new Vector2(transform.position.x, Random.Range(maxBound, minBound)), Quaternion.identity);
         }
 
-        yield return null; // Introduce a delay after spawning all objects
+        yield return null;
         isSpawning = false;
     }
 
@@ -158,7 +122,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
         {
             case Obstacle.spawnCondition.Under:
                 minBound = GameManager.Instance._minY;
-                maxBound = -1f;
+                maxBound = -3f;
                 break;
             case Obstacle.spawnCondition.Above:
                 minBound = 1f;
@@ -168,9 +132,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
                 minBound = 1f;
                 maxBound = 1f;
                 break;
-            case Obstacle.spawnCondition.BigTree:
-                minBound = 3f;
-                maxBound = 3f;
+            case Obstacle.spawnCondition.Log:
+                minBound = 5f;
+                maxBound = 5f;
                 break;
             case Obstacle.spawnCondition.All:
                 minBound = GameManager.Instance._minY;
@@ -180,6 +144,5 @@ public class SpawnerManager : Singleton<SpawnerManager>
                 break;
         }
     }
-
 }
 

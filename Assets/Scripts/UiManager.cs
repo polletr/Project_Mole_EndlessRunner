@@ -65,6 +65,7 @@ public class UiManager : MonoBehaviour
         {
             PositionPausePopUp();
             TogglePausePopUp();
+            AudioManager.Instance.ToggleMusic();
         }
     }
     public void BackToLevel()
@@ -75,6 +76,8 @@ public class UiManager : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
+        AudioManager.Instance.ToggleMusic();
+
     }
     public void ExitGame()
     {

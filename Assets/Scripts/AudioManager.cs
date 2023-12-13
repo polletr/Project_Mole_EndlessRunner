@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public AudioSource musicSource, sfxSource, diggingAudioSource;
 
     private void Awake()
     {
@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("Theme");
     }
 
     public void PlayMusic(string name)
@@ -75,5 +74,12 @@ public class AudioManager : MonoBehaviour
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
+        // If you want to mute instead of stopping, you can use:
+        // musicSource.mute = true;
     }
 }

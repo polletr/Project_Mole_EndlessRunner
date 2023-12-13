@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
         Above,
         Under,
         Tree,
-        BigTree,
+        Log,
         All
     };
 
@@ -41,6 +41,8 @@ public class Obstacle : MonoBehaviour
         Vector2 S = spriteRenderer.sprite.bounds.size;
         if (spawnType == spawnCondition.Tree)
             collider.size = new Vector2(S.x / 2f, S.y);
+        if (spawnType == spawnCondition.Log)
+            collider.size = new Vector2(S.x / 10f, S.y);
         else
             collider.size = S / 2f;
 

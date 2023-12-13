@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     private float speed;
 
@@ -21,12 +19,19 @@ public class PlayerController : MonoBehaviour
     private UnityEvent OnDigging;
 
     [SerializeField]
+    private UnityEvent OnDiggingSound;
+
+    [SerializeField]
+    private UnityEvent StopDiggingSound;
+
+    [SerializeField]
     private UnityEvent OnAboveground;
 
     private bool onTheDirt;
 
     private bool invincible;
-    private float invincibilityTimer;
+    private float invincibilityTimer = 2f; // Duration of invincibility in seconds
+    private float timer = 0f; // Timer for tracking invincibility duration
 
     private Rigidbody2D rb;
     public HealthManager healthManager;
@@ -36,6 +41,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private float maxAngleRotation = 45f;
+
+    private bool isBlinking = false;
+    [SerializeField]
+    private SpriteRenderer playerSpriteRenderer;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -49,21 +60,29 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && (onTheDirt || isDigging))
         {
             OnDigging.Invoke();
+            animator.SetBool("IsDigging", true);
             rb.velocity = new Vector2(0f, -speed);
-            //AudioManager.Instance.PlaySFX("Digging");
+        }
 
+        if (Input.GetKeyDown(KeyCode.Space) && onTheDirt)
+        {
+            OnDiggingSound.Invoke();
+        }
+
+        if ((!onTheDirt) || (HealthManager.Instance.currentLives == 0))
+        {
+            StopDiggingSound.Invoke();
+            animator.SetBool("IsDigging", false);
         }
 
         transform.position = new Vector2(-15f, transform.position.y);
 
         if (rb.velocity.y < 0f)
-        {            
-            //Rotate player down in the z axis
-
+        {
             float targetRotation = Mathf.Lerp(0f, -maxAngleRotation, Mathf.Abs(rb.velocity.y) / rotationSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, targetRotation), Time.deltaTime * rotationSpeed);
         }
-        else if(rb.velocity.y > 0f)
+        else if (rb.velocity.y > 0f)
         {
             float targetRotation = Mathf.Lerp(0f, maxAngleRotation, Mathf.Abs(rb.velocity.y) / rotationSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, targetRotation), Time.deltaTime * rotationSpeed);
@@ -72,7 +91,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * rotationSpeed);
         }
-
     }
 
     private void FixedUpdate()
@@ -82,11 +100,13 @@ public class PlayerController : MonoBehaviour
 
         if (invincible)
         {
-            float timer = 0f;
+            // Use Time.fixedDeltaTime for consistent timing
             timer += Time.fixedDeltaTime;
+
             if (timer >= invincibilityTimer)
             {
                 invincible = false;
+                timer = 0f; // Reset the timer when invincibility is over
             }
         }
     }
@@ -109,16 +129,12 @@ public class PlayerController : MonoBehaviour
         {
             if (!Input.GetKey(KeyCode.Space))
             {
-                //rb.velocity = new Vector2(0f, digSpeed);
                 rb.AddForce(Vector2.up * emergeSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-
             }
         }
 
-        // Clamp the position within boundaries
         float clampedY = Mathf.Clamp(transform.position.y, GameManager.Instance._minY, GameManager.Instance._maxY);
         transform.position = new Vector2(transform.position.x, clampedY);
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -126,7 +142,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Dirt"))
         {
             rb.gravityScale = 0f;
-
             isDigging = true;
         }
     }
@@ -138,15 +153,14 @@ public class PlayerController : MonoBehaviour
             healthManager.DepleteLife();
             invincible = true;
             AudioManager.Instance.PlaySFX("Damage", 0.5f);
-
+            StartCoroutine(BlinkPlayerSprite());
         }
 
         if (collision.gameObject.CompareTag("Collectible"))
         {
             Destroy(collision.gameObject);
             CollectibleManager.Instance.collectibleCount++;
-            AudioManager.Instance.PlaySFX("Collectible");
-
+            AudioManager.Instance.PlaySFX("Collectible", 0.5f);
         }
     }
 
@@ -155,9 +169,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Dirt"))
         {
             rb.gravityScale = 1f;
-            //rb.velocity = new Vector2(0f, emergeSpeed);
-            //rb.AddForce(Vector2.up * emergeSpeed, ForceMode2D.Impulse);
-
             OnAboveground.Invoke();
             isDigging = false;
             onTheDirt = false;
@@ -170,7 +181,24 @@ public class PlayerController : MonoBehaviour
         {
             onTheDirt = true;
         }
-
     }
 
+    IEnumerator BlinkPlayerSprite()
+    {
+        isBlinking = true;
+        float blinkDuration = 2f;
+        float blinkInterval = 0.2f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < blinkDuration)
+        {
+            playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
+            yield return new WaitForSeconds(blinkInterval);
+            elapsedTime += blinkInterval;
+        }
+
+        playerSpriteRenderer.enabled = true;
+        isBlinking = false;
+        invincible = false;
+    }
 }
