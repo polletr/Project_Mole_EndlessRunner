@@ -19,8 +19,6 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Button playButton;
     [SerializeField]
-    private Button muteButton;
-    [SerializeField]
     private Button howToPlayButton;
     [SerializeField]
     private Button howToPlay2Button;
@@ -29,11 +27,7 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Button howToPlay4Button;
     [SerializeField]
-    private Button quitButton;
-    [SerializeField]
     private Button creditsButton;
-    [SerializeField]
-    private GameObject muteCross;
     [SerializeField]
     private GameObject pausePopUp;
     #endregion
@@ -61,11 +55,11 @@ public class UiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+       if (Input.GetKeyDown(KeyCode.Escape))
         {
             PositionPausePopUp();
             TogglePausePopUp();
-            AudioManager.Instance.ToggleMusic();
+            //AudioManager.Instance.ToggleMusic();
         }
     }
     public void BackToLevel()
